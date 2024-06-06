@@ -41,10 +41,10 @@ ament_target_dependencies(cmd_publisher_node ${ROS2_PACKAGES})
 install(TARGETS cmd_publisher_node
   DESTINATION lib/${PROJECT_NAME})
 
-#TODO: Uncomment the following!
-#add_executable(simulator_node
-#        src/simulator_node.cpp
-#        src/simulator.cpp)
+add_executable(simulator_node
+        src/simulator_node.cpp
+        src/simulator.cpp)
+        
 #ament_target_dependencies(simulator_node ${ROS2_PACKAGES})
 #install(TARGETS simulator_node
 #        DESTINATION lib/${PROJECT_NAME})

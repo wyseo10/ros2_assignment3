@@ -27,21 +27,24 @@ Simulator::Simulator() : Node("simulator") {
     poses.resize(number_of_robots);
 }
 
-void Simulator::timer_callback() {
-    visualization_msgs::msg::MarkerArray msg;
-
-    //TODO: implement this part!
-
-    pub_poses->publish(msg);
-}
-
 void Simulator::topic_callback(const turtlesim::msg::Pose &msg, size_t id) {
     poses[id].position.x = msg.x - ori + (double)id * offset;
     poses[id].position.y = msg.y - ori;
     poses[id].position.z = 0;
 
-    //TODO: implement this!
-    //Hint: https://en.wikipedia.org/wiki/Conversion_between_quaternions_and_Euler_angles
-    // Yaw angle of the robot = msg.theta
-    // poses[id].orientation = ????
+    yaw = msg.theta;   
+
+    poses[id].orientation.w = cr * cp * cy + sr * sp * sy;
+    poses[id].orientation.x = sr * cp * cy - cr * sp * sy; 
+    poses[id].orientation.y = cr * sp * sy + sr * cp * sy;
+    poses[id].orientation.z = cr * cp * sy - sr * sp * cy;
+}
+
+void Simulator::timer_callback() {
+    visualization_msgs::msg::MarkerArray msg;
+
+    //TODO: implement this part!
+    
+
+    pub_poses->publish(msg);
 }

@@ -2,11 +2,11 @@
 #define ROS2_TUTORIAL_SIMULATOR_H
 
 #include "rclcpp/rclcpp.hpp"
+#include "geometry_msgs/msg/twist.hpp"
 #include <turtlesim/msg/pose.hpp>
 
-//TODO: Uncomment these!
-//#include "visualization_msgs/msg/marker_array.hpp"
-//#include "tf2_ros/transform_broadcaster.h"
+#include "visualization_msgs/msg/marker_array.hpp"
+#include "tf2_ros/transform_broadcaster.h"
 
 class Simulator : public rclcpp::Node {
 public:
@@ -27,6 +27,18 @@ private:
     void timer_callback();
 
     void topic_callback(const turtlesim::msg::Pose &msg, size_t id);
+
+    double roll = 0;
+    double pitch = 0;
+    double yaw = 0;
+
+    double cr = cos(roll * 0.5);
+    double sr = cos(roll * 0.5);
+    double cp = cos(pitch * 0.5);
+    double sp = cos(pitch * 0.5);
+    double cy = cos(yaw * 0.5);
+    double sy = sin(yaw * 0.5);
+
 };
 
 
