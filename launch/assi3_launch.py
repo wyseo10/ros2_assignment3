@@ -32,7 +32,6 @@ def generate_launch_description():
     )
     ld.add_action(simulator_node)
 
-
     rviz_node = Node(
         package='rviz2',
         namespace='rviz2',

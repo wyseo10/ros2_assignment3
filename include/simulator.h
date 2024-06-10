@@ -7,6 +7,7 @@
 
 #include "visualization_msgs/msg/marker_array.hpp"
 #include "tf2_ros/transform_broadcaster.h"
+#include <std_msgs/msg/color_rgba.hpp>
 
 class Simulator : public rclcpp::Node {
 public:
@@ -23,11 +24,12 @@ private:
     size_t number_of_robots = 5;
     double ori = 5.544444561004639;
     std::vector<geometry_msgs::msg::Pose> poses;
-
+ 
     void timer_callback();
 
     void topic_callback(const turtlesim::msg::Pose &msg, size_t id);
 
+    //calculation tf2
     double roll = 0;
     double pitch = 0;
     double yaw = 0;
@@ -38,7 +40,6 @@ private:
     double sp = cos(pitch * 0.5);
     double cy = cos(yaw * 0.5);
     double sy = sin(yaw * 0.5);
-
 };
 
 

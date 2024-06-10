@@ -12,6 +12,7 @@ find_package(std_msgs REQUIRED)
 find_package(geometry_msgs REQUIRED)
 find_package(turtlesim REQUIRED)
 find_package(visualization_msgs REQUIRED)
+find_package(tf2_ros)
 
 set(ROS2_PACKAGES
   rclcpp
@@ -19,6 +20,7 @@ set(ROS2_PACKAGES
   geometry_msgs
   turtlesim
   visualization_msgs
+  tf2_ros
 )
 
 include_directories(${PROJECT_SOURCE_DIR}/include)
@@ -44,10 +46,9 @@ install(TARGETS cmd_publisher_node
 add_executable(simulator_node
         src/simulator_node.cpp
         src/simulator.cpp)
-        
-#ament_target_dependencies(simulator_node ${ROS2_PACKAGES})
-#install(TARGETS simulator_node
-#        DESTINATION lib/${PROJECT_NAME})
+ament_target_dependencies(simulator_node ${ROS2_PACKAGES})
+install(TARGETS simulator_node
+        DESTINATION lib/${PROJECT_NAME})
 
 #install launch file
 install(DIRECTORY launch
