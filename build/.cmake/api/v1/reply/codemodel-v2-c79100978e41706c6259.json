@@ -1,0 +1,88 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-dbe2abc1a3b0209c8131.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "ros2_tutorial",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "cmd_publisher_node::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-cmd_publisher_node-Debug-c41b7877dc152511ba9b.json",
+					"name" : "cmd_publisher_node",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ros2_tutorial_uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ros2_tutorial_uninstall-Debug-c7d7e8968e6c956a0fbb.json",
+					"name" : "ros2_tutorial_uninstall",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "simulator_node::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-simulator_node-Debug-a09d71a8af39f34cb974.json",
+					"name" : "simulator_node",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-uninstall-Debug-ae6fc3e01044d86e9b40.json",
+					"name" : "uninstall",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/nuc10/ros2_ws/src/ros2_assignment3/build",
+		"source" : "/home/nuc10/ros2_ws/src/ros2_assignment3"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}

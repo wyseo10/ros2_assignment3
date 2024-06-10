@@ -36,11 +36,14 @@ void Simulator::topic_callback(const turtlesim::msg::Pose &msg, size_t id)
     poses[id].position.z = 0;
 
     yaw = msg.theta;
+    cy = cos(yaw * 0.5);
+    sy = sin(yaw * 0.5);
 
-    poses[id].orientation.w = cr * cp * cy + sr * sp * sy; // 0 @2D
-    poses[id].orientation.x = sr * cp * cy - cr * sp * sy; // 0 @2D
+    poses[id].orientation.w = cr * cp * cy + sr * sp * sy; 
+    poses[id].orientation.x = sr * cp * cy - cr * sp * sy; 
     poses[id].orientation.y = cr * sp * sy + sr * cp * sy;
     poses[id].orientation.z = cr * cp * sy - sr * sp * cy;
+    //RCLCPP_INFO(this->get_logger(), "[ID: %d] [ORIENT w : %lf] ", id, poses[id].orientation.w);
 }
 
 void Simulator::timer_callback()
@@ -51,7 +54,7 @@ void Simulator::timer_callback()
     {
         visualization_msgs::msg::Marker marker;
 
-        marker.header.frame_id = "world";
+        marker.header.frame_id = "map";
         marker.ns = "/turtlesim" + std::to_string(id);
         marker.id = id;
         marker.type = visualization_msgs::msg::Marker::CUBE;
@@ -59,7 +62,7 @@ void Simulator::timer_callback()
 
         marker.pose = poses[id];
 
-        marker.scale.x = robot_radius;
+        marker.scale.x = 0.1;
         marker.scale.y = robot_radius;
         marker.scale.z = robot_radius;
 
@@ -71,8 +74,6 @@ void Simulator::timer_callback()
 
         msg.markers.push_back(marker);
     }
-
-
 
     pub_poses->publish(msg);
 }

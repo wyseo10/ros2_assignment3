@@ -1,0 +1,11 @@
+/home/nuc10/ros2_ws/src/ros2_assignment3/build/CMakeFiles/uninstall.dir
+/home/nuc10/ros2_ws/src/ros2_assignment3/build/CMakeFiles/ros2_tutorial_uninstall.dir
+/home/nuc10/ros2_ws/src/ros2_assignment3/build/CMakeFiles/cmd_publisher_node.dir
+/home/nuc10/ros2_ws/src/ros2_assignment3/build/CMakeFiles/simulator_node.dir
+/home/nuc10/ros2_ws/src/ros2_assignment3/build/CMakeFiles/test.dir
+/home/nuc10/ros2_ws/src/ros2_assignment3/build/CMakeFiles/edit_cache.dir
+/home/nuc10/ros2_ws/src/ros2_assignment3/build/CMakeFiles/rebuild_cache.dir
+/home/nuc10/ros2_ws/src/ros2_assignment3/build/CMakeFiles/list_install_components.dir
+/home/nuc10/ros2_ws/src/ros2_assignment3/build/CMakeFiles/install.dir
+/home/nuc10/ros2_ws/src/ros2_assignment3/build/CMakeFiles/install/local.dir
+/home/nuc10/ros2_ws/src/ros2_assignment3/build/CMakeFiles/install/strip.dir
