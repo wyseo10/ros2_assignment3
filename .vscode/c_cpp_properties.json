@@ -10,7 +10,7 @@
         "/home/amr/ros2_ws/install/crazyflie_interfaces/include/**",
         "/opt/ros/iron/include/**",
         "/home/amr/ros2_ws/src/learning_tf2_cpp/include/**",
-        "/home/amr/ros2_ws/src/ros2_tutorial/include/**",
+        "/home/amr/ros2_ws/src/ros2_assignment3/include/**",
         "/usr/include/**"
       ],
       "name": "ROS",

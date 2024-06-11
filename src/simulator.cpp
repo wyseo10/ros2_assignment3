@@ -36,8 +36,8 @@ void Simulator::topic_callback(const turtlesim::msg::Pose &msg, size_t id)
     poses[id].position.z = 0;
 
     yaw = msg.theta;
-    cy = cos(yaw * 0.5);
-    sy = sin(yaw * 0.5);
+    double cy = cos(yaw * 0.5);
+    double sy = sin(yaw * 0.5);
 
     poses[id].orientation.w = cr * cp * cy + sr * sp * sy; 
     poses[id].orientation.x = sr * cp * cy - cr * sp * sy; 
@@ -62,7 +62,7 @@ void Simulator::timer_callback()
 
         marker.pose = poses[id];
 
-        marker.scale.x = 0.1;
+        marker.scale.x = robot_radius;
         marker.scale.y = robot_radius;
         marker.scale.z = robot_radius;
 
